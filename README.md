@@ -1,1 +1,1 @@
-# NDIPSHOP
+# cordova

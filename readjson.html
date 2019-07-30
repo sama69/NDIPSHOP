@@ -1,0 +1,35 @@
+<div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        <i class="fa fa-book"></i> FORMAT JSON
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-book"></i>JSON</a></li>
+      </ol>
+    </section>
+ <head>
+    <link rel="stylesheet" type="text/css" href="css/ionic.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var url = "https://samafatma82.000webhostapp.com/NDIPSHOP/ndipshop/admin/json.php";
+        $.getJSON(url, function(result) {
+            console.log(result);
+            $.each(result, function(i, field) {
+                var id_bahan = field.id_bahan;
+                var bahan = field.bahan;
+                var gambar = field.gambar;
+				var berat = field.berat;
+                var harga = field.harga;
+                var stok = field.stok;
+                
+                $("#listview").append("<a class='item' href='form.html?id_bahan=" + id_bahan + "&bahan=" + bahan + "&gambar=" + gambar +"&berat=" + berat + "&harga=" + harga + "&stok=" + stok +  "'><span class='item-id_bahante'><h2><b>" + berat + "</h2></b></span><h2><b>" + bahan + " </b></h2><p>" + gambar + "</p><p>" + harga + "</p><p>" + stok + "</p></a>");
+    
+                
+            });
+        });
+    });
+    </script>
+</head>
+  <div class="control-sidebar-bg"></div>
+</div>
